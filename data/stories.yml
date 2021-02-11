@@ -1,0 +1,148 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: itau path 1
+  steps:
+  - intent: itau
+  - action: utter_itau
+  - intent: adesao
+  - action: utter_adesao
+  - action: utter_adesao_P1
+  - action: utter_adesao_R1
+  - action: action_restart
+
+- story: itau path 2
+  steps:
+  - intent: itau
+  - action: utter_itau
+  - intent: retorno_itau
+  - action: utter_retorno
+  - action: utter_retorno_P1
+  - action: utter_retorno_R1
+  - action: action_restart
+
+- story: itau path 3
+  steps:
+  - intent: itau
+  - action: utter_itau
+  - intent: tudo
+  - action: utter_itautudo
+  - action: utter_adesao_P1
+  - action: utter_adesao_R1
+  - action: utter_retorno_P1
+  - action: utter_retorno_R1
+  - action: action_restart
+
+- story: alfa path 1
+  steps:
+  - intent: alfa
+  - action: utter_alfa
+  - intent: assinatura
+  - action: utter_assinatura
+  - action: utter_assinatura_P1
+  - action: utter_assinatura_R1
+  - action: action_restart
+
+- story: bnp path 1
+  steps:
+  - intent: bnp
+  - action: utter_bnp
+  - intent: operacao
+  - action: utter_operacao
+  - action: utter_operacao_P1
+  - action: utter_operacao_R1
+  - action: action_restart
+
+- story: btg path 1
+  steps:
+  - intent: btg
+  - action: utter_btg
+  - intent: dashboard
+  - action: utter_dashboard
+  - action: utter_dashboard_P1
+  - action: utter_dashboard_R1
+  - action: action_restart
+
+- story: bv path 1
+  steps:
+  - intent: bv
+  - action: utter_bv
+  - intent: arquivo
+  - action: utter_arquivo
+  - action: utter_arquivo_P1
+  - action: utter_arquivo_R1
+  - action: action_restart
+
+- story: daycoval path 1
+  steps:
+  - intent: daycoval
+  - action: utter_daycoval
+  - intent: subida
+  - action: utter_subida
+  - action: utter_subida_P1
+  - action: utter_subida_R1
+  - action: action_restart
+
+- story: fca path 1
+  steps:
+  - intent: fca
+  - action: utter_fca
+  - intent: token
+  - action: utter_token
+  - action: utter_token_P1
+  - action: utter_token_R2
+  - action: action_restart
+
+- story: inter path 1
+  steps:
+  - intent: inter
+  - action: utter_inter
+  - intent: retorno_inter
+  - action: utter_retornointer
+  - action: utter_retornointer_P1
+  - action: utter_retornointer_R2
+  - action: action_restart
+
+- story: safra path 1
+  steps:
+  - intent: safra
+  - action: utter_safra
+  - intent: retorno_safra
+  - action: utter_retornosafra
+  - action: utter_retornosafra_P1
+  - action: utter_retornosafra_R2
+  - action: action_restart
+
+- story: tags path 1
+  steps:
+  - intent: tags
+  - action: utter_tags
+  - action: action_restart

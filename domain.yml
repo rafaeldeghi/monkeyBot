@@ -1,0 +1,126 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- inter_tags
+- inter
+- operacoes_duplicadas
+- crefisa
+- alfa
+- alfa_tags
+- itau
+- itau_tags
+- tudo
+- adesao
+- assinatura
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_itau:
+  - text: Olá, vejo que você está tendo problema com o Itaú, de qual tipo seria ?
+  utter_adesao:
+  - text: Aqui está oque eu tenho sobre Itaú e Adesão
+  utter_adesao_P1:
+  - text: 'PERGUNTA: Os termos de adesão do Pine, Crefisa e Itaú que já foram configurados não estão aparecendo para os fornecedores. Eles entraram no programa e ativaram o termo depois da configuração (itaú foi ontem), e os fornecedores estão dizendo que não receberam, e quando tentam fazer o download da erro. Falta alguma coisa para esses termos?'
+  utter_adesao_R1:
+  - text: 'RESPOSTA: Desativar e ativar o termo para que todos sejam gerados novamente.'
+  utter_retorno:
+  - text: Aqui está oque eu tenho sobre Itaú e Retorno de Operações
+  utter_retorno_P1:
+  - text: 'PERGUNTA: Como funciona o retorno das operações com Itaú para Petro? Como Itau só assina operação no dia seguinte, o retorno que mandamos para a Petro é com a conta bancaria do Itau que enviamos para o banco também, e não a conta do retorno de liquidação?! Mas para Petro rodar a F51 deles eles precisam receber a conta de liquidação cadastrada no SAP deles, então está dando erro.'
+  utter_retorno_R1:
+  - text: 'RESPOSTA: O Itaú não assina operação, nós enviamos para a Petro um webhook com o retorno do Itaú, porque é fake custody, então no dia seguinte caso o Itaú reprove a operação, nos enviamos a recusa. E a conta enviada é a conta de recebimento que o Itaú cadastrou no perfil dele, então foi o Itaú que cadastrou um conta errada.'
+  utter_itautudo:
+  - text: 'Aqui está tudo que eu tenho sobre o Itaú'
+  utter_tags:
+  - text: 'Itaú: [Adesão, Retorno_itau]    Alfa: [Assinatura]    BNP: [Operação]    BTG:[Dashboard]    BV: [Arquivo]    Daycoval: [Subida]    FCA: [Token]    Inter: [Retorno_inter]    Safra: [Retorno_safra]'
+  utter_alfa:
+  - text: Olá, vejo que você está tendo problema com o Alfa, de qual tipo seria ?
+  utter_assinatura:
+  - text: Aqui está oque eu tenho sobre Alfa e Assinatura
+  utter_assinatura_P1:
+  - text: 'PERGUNTA: O Alfa precisa assinar uma operação, mas não está aparecendo para eles. O que pode ser? '
+  utter_assinatura_R1:
+  - text: 'RESPOSTA: A assinatura só poderá ser realizada após a aprovação da compra.'
+  utter_bnp:
+  - text: Olá, vejo que você está tendo problema com o BNP, de qual tipo seria ?
+  utter_operacao:
+  - text: Aqui está oque eu tenho sobre BNP e Operação
+  utter_operacao_P1:
+  - text: 'PERGUNTA: BNP está dizendo que uma operação de FCA que saiu para eles e já está aprovada, não está disponível para assinatura. Se aprovada, nós recebemos o retorno, mas porque não estaria para assinatura deles?'
+  utter_operacao_R1:
+  - text: 'RESPOSTA: O fornecedor cadastrou dois responsáveis legais com o mesmo e-mail, mas provavelmente é um cadastro antigo, porque atualmente não seria possível.'
+  utter_btg:
+  - text: Olá, vejo que você está tendo problema com o BTG, de qual tipo seria ?
+  utter_dashboard:
+  - text: Aqui está oque eu tenho sobre BTG e Dashboard
+  utter_dashboard_P1:
+  - text: 'PERGUNTA: BTG está tentando acessar o dashboard do programa da CMPC em prd mas está apresentando um erro.'
+  utter_dashboard_R1:
+  - text: 'RESPOSTA: Isso se dá pelo fato deles nunca terem comprado, este é um erro conhecido no roadMap de correção.'
+  utter_bv:
+  - text: Olá, vejo que você está tendo problema com o BV, de qual tipo seria ?
+  utter_arquivo:
+  - text: Aqui está oque eu tenho sobre BV e Arquivo
+  utter_arquivo_P1:
+  - text: 'PERGUNTA: O BV não irá processar o arquivo da CNH VOT01844555002800211220102672401.REM pq o numero do endereço informado no header do lote está fora do padrão numérico. Faz algum sentido não processarem por causa disso?'
+  utter_arquivo_R1:
+  - text: 'RESPOSTA: O fornecedor ou o sacado fez o cadastro com o endereço dessa forma, então, mandamos desse jeito, mesmo no arquivo. A operação vai ser cancelada, e vocês precisam falar com o fornecedor para mudar o número do endereço.'
+  utter_daycoval:
+  - text: Olá, vejo que você está tendo problema com o Daycoval, de qual tipo seria ?
+  utter_subida:
+  - text: Aqui está oque eu tenho sobre Daycoval e Subida de Arquivo
+  utter_subida_P1:
+  - text: 'PERGUNTA: O banco Daycoval pagou as operações que recusaram e os fornecedores subiram novamente os títulos.'
+  utter_subida_R1:
+  - text: 'RESPOSTA: Os fornecedores precisaram estornar os valores pagos e fazer a operação novamente, assim o banco aceitou e pagou os títulos novamente.'
+  utter_fca:
+  - text: Olá, vejo que você está tendo problema com o FCA, de qual tipo seria ?
+  utter_token:
+  - text: Aqui está oque eu tenho sobre FCA e Token
+  utter_token_P1:
+  - text: 'PERGUNTA: FCA falou que está tentando enviar os títulos, e está aparecendo esse erro ao gerar Token. O que pode ser?'
+  utter_token_R2:
+  - text: 'RESPOSTA: Está chegando uma série de erros de autenticação para enviar os webhooks, pode ser algum problema de barramento, ou a aplicação que usamos para chamar a api deles foi desativada.'
+  utter_inter:
+  - text: Olá, vejo que você está tendo problema com o Inter, de qual tipo seria ?
+  utter_retornointer:
+  - text: Aqui está oque eu tenho sobre Inter e Retorno
+  utter_retornointer_P1:
+  - text: 'PERGUNTA: O Banco Inter falou que enviou um retorno do fornecedor 19972682000122 no programa de FCA com tudo aprovado e só 2 títulos recusados, e apareceu que a operação foi toda recusada.'
+  utter_retornointer_R2:
+  - text: 'RESPOSTA: A aprovação parcial da Fiat está desligada, portanto, ao recusar um arquivo, todos são recusados também. A solução se dá de dois jeitos: a Fiat pode aceitar um webhook, ou liberamos a aprovação parcial e os arquivos são processados novamente com um nome diferente.'
+  utter_safra:
+  - text: Olá, vejo que você está tendo problema com o Safra, de qual tipo seria ?
+  utter_retornosafra:
+  - text: Aqui está oque eu tenho sobre Safra e Retorno
+  utter_retornosafra_P1:
+  - text: 'PERGUNTA: O Safra já creditou a operação piloto para o fornecedor da Arauco, mas não recebemos o retorno, e quando fizemos o teste em hmg, o arquivo não podia ir pela Finnet. Agora em prd, o Safra não alterou de volta e não consegue reenviar.'
+  utter_retornosafra_R2:
+  - text: 'RESPOSTA: A operação vai ficar em aprovação e eles não vão conseguir assinar, e o arquivo precisa ser enviado pelo Finnet, pois esse é o fluxo do ambiente de prd.'
+actions:
+- utter_alfa
+- utter_crefisa
+- utter_inter
+- utter_opduplicadas
+- utter_opduplicadas_P1
+- utter_opduplicadas_R2
